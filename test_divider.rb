@@ -8,4 +8,10 @@ class TestDivider < Test::Unit::TestCase
 		expected_output = 5
 		assert_equal(expected_output,divider(x,y))
 	end
+
+	def test_divide_by_0
+		x=10
+		y=0
+		assert_raise(ZeroDivisionError){divider(x,y)}
+	end
 end
