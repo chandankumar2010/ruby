@@ -1,0 +1,39 @@
+-----System method-----
+
+Whenever we run an external command using ruby script such as system commands, ruby creates a child process and a shellis created in that child process. Parent process wait till child process completes its execution.
+
+In ruby we can run external commands in a subprocess is by using 'system' method. This method takes command name as argument and returns true if command executes successfully or false if unsuccessful.
+
+The system method will return true when the command that it's running returns is zero exit status, and false if the exit status is non-zero. Remember that in Unix like operating systems, the zero exit status of a child process usually indicates success, while a non-zero status generally indicates some kind of failure with the number returned providing more information. The Ruby system method is useful if we just want to run a command and determine whether or not it was successful.
+
+-----Backtick method-----
+Its an another way to run terminal commands in subprocesses. We wrap the command inside backticks.
+example: `ls`
+When external commands are executed through backticks, their output is returned through the STDOUT instead of their exit status.
+The exit status of the last executed child process is stored in $?.It has .success method to determine whether command executed successfully or not.
+
+Alternative to backticks is '%x'. Uses: %x(date)
+
+Backtick vs System method
+
+When an error occurs in a subprocess we have generated using backticks, it gets returned to the parent process.
+If the parent has no way to deal with the exception, it causes parent to exit.
+
+If an exception happens with the child process created with system, that method just gobbles up the exception and returns false to indicate that it failed.
+
+Workaound: use 2>&1
+Example: 'lazy 2>&1'
+puts "Continue"
+
+-----Open3-----
+
+Since Open3 is a module in the standard and library and not built directly into the Ruby core language, we'll need to include it in our scripts using require, as we saw arlier. This module has a very handy method called capture3.
+
+Open3 has method capture3 that return 3 values in order: STDOUT,STDERR,STATUS
+We can use multiple assignment technique to capture these three values.
+
+As you can see, capture3 method from the Open3 module gives us easy access to the return status, like the system method did. But it also lets us look at the text produced by running the system command, like we got with backtix. It also swallows the error if the system command fails, but lets us easily save and examine the failure output from standard error.
+
+Official doc(Open3): https://ruby-doc.org/stdlib-2.4.1/libdoc/open3/rdoc/Open3.html
+
+Official doc(process):http://ruby-doc.org/core-2.4.1/Process.html
