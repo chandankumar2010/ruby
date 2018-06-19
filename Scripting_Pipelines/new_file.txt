@@ -1,0 +1,6 @@
+Some text from the script to be written to a file(mod)
+Some text from the script to be written to a file
+
+some text to test capitalize script.test this line.
+this line as well.
+this one too.
