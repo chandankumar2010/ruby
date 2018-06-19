@@ -1,0 +1,4 @@
+Most operating system apply three different kinds of I/O streams by default.
+They are: STDIN, STDOUT, STDERR
+
+Doc(ARGF class): https://ruby-doc.org/core-2.4.1/ARGF.html
