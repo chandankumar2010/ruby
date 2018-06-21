@@ -1,0 +1,8 @@
+Problem statement: To scan all the devices on the network.
+
+Tools can be used for such operation: netsh on windows, nmap(cross platform)
+
+Scripting: We can IPAddr class and net-ping library to perform our task.
+    IPAddr:https://ruby-doc.org/stdlib-2.4.1/libdoc/ipaddr/rdoc/index.html
+    net-ping:https://rubygems.org/gems/net-ping/
+
