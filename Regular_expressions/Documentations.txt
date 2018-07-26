@@ -1,0 +1,5 @@
+Special characters, anchors and modifiers: https://ruby-doc.org/core-2.4.1/Regexp.html
+
+Anchors : https://ruby-doc.org/core-2.4.1/Regexp.html#class-Regexp-label-Anchors
+
+Metacharacters : https://ruby-doc.org/core-2.4.1/Regexp.html#class-Regexp-label-Metacharacters+and+Escapes
