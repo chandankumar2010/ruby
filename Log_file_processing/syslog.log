@@ -1,0 +1,7 @@
+2018-07-26 13:49:02 computer.name CRON[29440]: USER (good user)
+2018-07-26 13:50:02 computer.name jam_tag=psim[29187]: (UUID:006)
+2018-07-26 13:50:02 computer.name jam_tag=psim[29187]: (UUID:006)
+2018-07-26 13:50:40 computer.name CRON[29440]: USER (naughty_user)
+2018-07-26 13:51:18 computer.name cacheclient[29807]: start syncing from "0xDEADBEEF"
+2018-07-26 13:51:58 computer.name CRON[29440]: USER (naughty_user)
+2018-07-26 13:52:07 computer.name CRON[29440]: USER (naughty_user)
