@@ -1,0 +1,29 @@
+Cron job: Used to schedule scripts on Unix-based OSes
+
+#to get list of user name from terminal
+grep naughty_user syslog
+
+#to get the count of the user name, here 'l' flag count line instead of words
+grep naughty_user syslog | wc -l
+
+#grep command with regexp
+grep CRON syslog | grep -oE '\((.+)\)$'
+
+# -o : means we want to print only the matching part of the line on the screen
+# -E : means we want to use extended regexp
+
+#to run ruby code directly from command line, we use -e flag
+ruby -e 'puts "This is from command line"'
+
+# -n : This flag tells ruby that we want to apply our code to each line of the STDIN until there's no more
+
+#ruby stores output in a global variable: $_
+
+#log processing with hash
+cat syslog.log | ruby -ne 'usernames = Hash.new(0); if $_.include?("CRON") then username = /\((.+)\)$/.match($_); usernames[username[1]]+=1 end ;puts usernames '
+
+#system command to capitalize every word on a file
+cat story.txt | ruby -ne 'puts $_.gsub(/\S+/,&:capitalize)'
+
+#log processing without hash
+cat syslog.log | ruby -ne 'if $_.include?("CRON") then username = /\((.+)\)$/.match($_); puts username.captures end'
