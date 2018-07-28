@@ -1,0 +1,7 @@
+https://rubygems.org/gems/fastercsv
+
+#HTMl parsing libraries
+Nokogiri: HTML parser ruby gem
+Nokogiri : http://www.nokogiri.org/
+
+Open URI : https://ruby-doc.org/stdlib-2.4.1/libdoc/open-uri/rdoc/OpenURI.html
